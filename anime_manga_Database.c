@@ -17,7 +17,7 @@ typedef struct animeDetails
 typedef struct mangaDetails
 {
     char mangaTitle[50];
-	int volumes;
+    int volumes;
     int chapters;
     float mangaScore;
 
@@ -80,6 +80,25 @@ void showManga()
 	fclose(fileManga);
 }
 
+void favoriteAnime()
+{
+	animeDetails animeNew;
+
+	printf("Title	: "); scanf(" %[^\n]", animeNew.animeTitle);
+	printf("Episodes: "); scanf("%d", &animeNew.episodes);
+	printf("Score	: "); scanf("%f", &animeNew.animeScore);
+}
+
+void favoriteManga()
+{
+	mangaDetails mangaNew;
+
+	printf("Title	: "); scanf(" %[^\n]", mangaNew.mangaTitle);
+	printf("Volumes	: "); scanf("%d", &mangaNew.volumes);
+	printf("Chapter	: "); scanf("%d", &mangaNew.chapters);
+	printf("Score	: "); scanf("%f", &mangaNew.mangaScore);
+}
+
 int main()
 {
 	animeDetails sendAnime;
@@ -102,8 +121,8 @@ int main()
 		{
 			case 1: showAnime(); break;
 			case 2: showManga(); break;
-			case 3: printf("To be added later\n"); break;
-			case 4: printf("Also to be added later\n"); break;
+			case 3: favoriteAnime(); break;
+			case 4: favoriteManga(); break;
 			case 0: printf("Exiting Program...\n"); break;
 			default: printf("Option not available\n");
 		}

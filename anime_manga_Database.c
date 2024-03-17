@@ -69,8 +69,8 @@ void showManga()
 	}
 
 	printf("\n-------------------------------------------------------\n");
-    printf("| No. | Title \t \t| Volumes | Chapters | Score |\n");
-    printf("-------------------------------------------------------\n");
+    	printf("| No. | Title \t \t| Volumes | Chapters | Score |\n");
+    	printf("-------------------------------------------------------\n");
 
 	for(listCount = 0;listCount < itemCount;listCount)
 	{
@@ -110,8 +110,8 @@ int main()
         printf("\n==========Menu==========\n");
         printf("1. Show anime list\n");
         printf("2. Show manga list\n");
-		printf("3. Insert favorite anime\n");
-		printf("4. Insert favorite manga\n");
+	printf("3. Insert favorite anime\n");
+	printf("4. Insert favorite manga\n");
         printf("(0) Exit\n\n");
 
         printf("Choice: ");

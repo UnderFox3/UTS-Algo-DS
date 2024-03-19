@@ -87,6 +87,18 @@ void favoriteAnime()
 	printf("Title	: "); scanf(" %[^\n]", animeNew.animeTitle);
 	printf("Episodes: "); scanf("%d", &animeNew.episodes);
 	printf("Score	: "); scanf("%f", &animeNew.animeScore);
+
+	printf("\nWant to save your favorite?\n");
+	printf("1. Yes\n");
+	printf("2. No\n");
+
+	int decision;
+	printf("Choice: ");
+	scanf("%d", &decision);
+
+	if(decision == 1) return;
+	else if(desicion == 2) return;
+	else return;
 }
 
 void favoriteManga()
@@ -97,6 +109,18 @@ void favoriteManga()
 	printf("Volumes	: "); scanf("%d", &mangaNew.volumes);
 	printf("Chapter	: "); scanf("%d", &mangaNew.chapters);
 	printf("Score	: "); scanf("%f", &mangaNew.mangaScore);
+
+	printf("\nWant to save your favorite?\n");
+	printf("1. Yes\n");
+	printf("2. No\n");
+
+	int decision;
+	printf("Choice: ");
+	scanf("%d", &decision);
+
+	if(decision == 1) return;
+	else if(decision == 2) return;
+	else return;
 }
 
 int main()

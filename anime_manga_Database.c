@@ -84,21 +84,42 @@ void favoriteAnime()
 {
 	animeDetails animeNew;
 
-	printf("Title	: "); scanf(" %[^\n]", animeNew.animeTitle);
-	printf("Episodes: "); scanf("%d", &animeNew.episodes);
-	printf("Score	: "); scanf("%f", &animeNew.animeScore);
+	printf("Title	 : "); scanf(" %[^\n]", animeNew.animeTitle);
+	printf("Episodes : "); scanf("%d", &animeNew.episodes);
+	printf("Score	 : "); scanf("%f", &animeNew.animeScore);
 
-	printf("\nWant to save your favorite?\n");
-	printf("1. Yes\n");
-	printf("2. No\n");
+	printf("\n \t Want to save your favorite?\n");
+	printf("\t (1) Yes\n");
+	printf("\t (2) No\n\n");
 
 	int decision;
-	printf("Choice: ");
+	printf("\t Choice: ");
 	scanf("%d", &decision);
 
-	if(decision == 1) return;
-	else if(desicion == 2) return;
-	else return;
+	if(decision == 1)
+	{
+		FILE *fileEntryAnime = fopen("animeList.txt", "a");
+
+		fprintf(fileEntryAnime, "\n%s#%d#%.2f", animeNew.animeTitle, animeNew.episodes, animeNew.animeScore);
+
+		fclose(fileEntryAnime);
+
+		printf("\n \t Entry is saved...\n");
+
+		return;
+	}
+
+	else if(desicion == 2)
+	{
+		printf("\n \t Okay, entry will not be saved...\n");
+		return;
+	}
+	
+	else
+	{
+		printf("\n \t Option not found, entry will not be saved by default...\n");
+		return;
+	}
 }
 
 void favoriteManga()
@@ -110,32 +131,53 @@ void favoriteManga()
 	printf("Chapter	: "); scanf("%d", &mangaNew.chapters);
 	printf("Score	: "); scanf("%f", &mangaNew.mangaScore);
 
-	printf("\nWant to save your favorite?\n");
-	printf("1. Yes\n");
-	printf("2. No\n");
+	printf("\n \t Want to save your favorite?\n");
+	printf("\t (1) Yes\n");
+	printf("\t (2) No\n\n");
 
 	int decision;
-	printf("Choice: ");
+	printf("\t Choice: ");
 	scanf("%d", &decision);
 
-	if(decision == 1) return;
-	else if(decision == 2) return;
-	else return;
+	if(decision == 1)
+	{
+		FILE *fileEntryManga = fopen("mangaList.txt", "a");
+
+		fprintf(fileEntryManga, "\n%s#%d#%d#%.2f", mangaNew.mangaTitle, mangaNew.volumes, mangaNew.chapters, mangaNew.mangaScore);
+
+		fclose(fileEntryManga);
+
+		printf("\n \t Entry saved...\n");
+
+		return;
+	}
+
+	else if(decision == 2)
+	{
+		printf("\n \t Okay, entry will not be saved...\n");
+		return;
+	}
+
+	else
+	{
+		printf("\n \t Option not found, entry will not be saved by default...\n");
+		return;
+	}
 }
 
 int main()
 {
 	animeDetails sendAnime;
 	mangaDetails sendManga;
-    int choice;
+    	int choice;
 
     do
     {
         printf("\n==========Menu==========\n");
-        printf("1. Show anime list\n");
-        printf("2. Show manga list\n");
-	printf("3. Insert favorite anime\n");
-	printf("4. Insert favorite manga\n");
+        printf("(1) Show anime list\n");
+        printf("(2) Show manga list\n");
+	printf("(3) Insert favorite anime\n");
+	printf("(4) Insert favorite manga\n");
         printf("(0) Exit\n\n");
 
         printf("Choice: ");

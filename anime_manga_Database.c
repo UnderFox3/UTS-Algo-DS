@@ -171,17 +171,17 @@ int main()
 	mangaDetails sendManga;
     	int choice;
 
-    do
-    {
-        printf("\n==========Menu==========\n");
-        printf("(1) Show anime list\n");
-        printf("(2) Show manga list\n");
-	printf("(3) Insert favorite anime\n");
-	printf("(4) Insert favorite manga\n");
-        printf("(0) Exit\n\n");
+    	do
+    	{
+        	printf("\n==========Menu==========\n");
+        	printf("(1) Show anime list\n");
+        	printf("(2) Show manga list\n");
+		printf("(3) Insert favorite anime\n");
+		printf("(4) Insert favorite manga\n");
+        	printf("(0) Exit\n\n");
 
-        printf("Choice: ");
-        scanf("%d", &choice);
+        	printf("Choice: ");
+        	scanf("%d", &choice);
 
 		switch(choice)
 		{
@@ -192,7 +192,7 @@ int main()
 			case 0: printf("Exiting Program...\n"); break;
 			default: printf("Option not available\n");
 		}
-    } while(choice != 0);
+    	} while(choice != 0);
 
-    return 0;
+    	return 0;
 }
